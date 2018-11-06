@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Wedding_Vibes.Data;
@@ -37,6 +38,12 @@ namespace Wedding_Vibes.Controllers
                                 Items = _context.MenuItem.Where(x=>x.MenuId==men.Id).OrderBy(x=>x.Category).ToList()
                             }).ToList();
             return View(menus);
+        }
+        [Authorize]
+        public IActionResult CustomizedMenu()
+        {
+            var items = _context.MenuItem.Distinct().ToList();
+            return View();
         }
 
         public IActionResult About()
