@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace WeddingVibes.Migrations
 {
-    public partial class reservation : Migration
+    public partial class m1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -46,6 +46,20 @@ namespace WeddingVibes.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Menu",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    MenuName = table.Column<string>(maxLength: 100, nullable: false),
+                    MenuPrice = table.Column<double>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Menu", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -164,6 +178,7 @@ namespace WeddingVibes.Migrations
                     FirstName = table.Column<string>(maxLength: 50, nullable: false),
                     HallName = table.Column<string>(nullable: false),
                     LastName = table.Column<string>(maxLength: 100, nullable: true),
+                    MenuId = table.Column<int>(nullable: false),
                     NumberofGuests = table.Column<int>(nullable: false),
                     PhoneNo = table.Column<int>(nullable: false),
                     ReservationDate = table.Column<DateTime>(nullable: false),
@@ -180,6 +195,27 @@ namespace WeddingVibes.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MenuItem",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Category = table.Column<string>(maxLength: 100, nullable: false),
+                    ItemName = table.Column<string>(maxLength: 100, nullable: false),
+                    MenuId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MenuItem", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_MenuItem_Menu_MenuId",
+                        column: x => x.MenuId,
+                        principalTable: "Menu",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -222,6 +258,11 @@ namespace WeddingVibes.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_MenuItem_MenuId",
+                table: "MenuItem",
+                column: "MenuId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Reservation_UserID",
                 table: "Reservation",
                 column: "UserID");
@@ -245,10 +286,16 @@ namespace WeddingVibes.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "MenuItem");
+
+            migrationBuilder.DropTable(
                 name: "Reservation");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "Menu");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

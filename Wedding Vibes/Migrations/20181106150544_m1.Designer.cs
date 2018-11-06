@@ -11,8 +11,8 @@ using Wedding_Vibes.Data;
 namespace WeddingVibes.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181105192248_menuitem")]
-    partial class menuitem
+    [Migration("20181106150544_m1")]
+    partial class m1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -201,6 +201,10 @@ namespace WeddingVibes.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
                     b.Property<string>("ItemName")
                         .IsRequired()
                         .HasMaxLength(100);
@@ -231,6 +235,8 @@ namespace WeddingVibes.Migrations
 
                     b.Property<string>("LastName")
                         .HasMaxLength(100);
+
+                    b.Property<int>("MenuId");
 
                     b.Property<int>("NumberofGuests");
 

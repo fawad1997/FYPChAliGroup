@@ -61,6 +61,8 @@ namespace Wedding_Vibes.Controllers
             DateTime today = DateTime.Now;
             var upcomingReservedDates = _context.Reservation.Where(X=>X.ReservationDate>today).Select(y=>y.ReservationDate).ToList();
             ViewBag.ReservedDates = upcomingReservedDates;
+            var m = _context.Menu.ToList();
+            ViewBag.Menu = new SelectList(m, "Id", "MenuName");
             ViewData["UserID"] = new SelectList(_context.Users, "Id", "Id");
             return View();
         }
