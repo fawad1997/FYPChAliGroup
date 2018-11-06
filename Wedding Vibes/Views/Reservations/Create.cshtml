@@ -7,7 +7,7 @@
 
 <h2>Create</h2>
 
-<h4 style="color:white;"><center>Reservation</center></h4>
+<h2 style="color:white;"><center>Reservation</center></h2>
 <hr />
 @*<div class="row">
         <div class="col-md-4">
@@ -371,10 +371,10 @@
                                 <span class="form-sub-label-container" style="vertical-align:top">
                                     <input asp-for="PhoneNo" class="form-textbox" type="number" />
                                     @*@foreach(var dat in ViewBag.ReservedDates)
-                                        {
-                                        <h1>@dat.ReservationDate</h1>
+                        {
+                        <h1>@dat.ReservationDate</h1>
 
-                                        }*@
+                        }*@
                                     <label class="form-sub-label" for="input_6_phone" id="sublabel_phone" style="min-height:13px"> Phone Number </label>
                                     <span asp-validation-for="PhoneNo" class="text-danger"></span>
                                 </span>
@@ -460,12 +460,21 @@
                     </li>
 
                     <li class="form-line" data-type="control_number" id="id_24">
+                        <label class="form-label form-label-left form-label-auto" id="label_24" for="input_24"> Menu </label>
+                        <div id="cid_24" class="form-input">
+                            @Html.DropDownListFor(m=>m.MenuId, ViewBag.Menu as SelectList,"--Select--", new { @class="form-dropdown" })
+                            <span asp-validation-for="NumberofGuests" class="text-danger"></span>
+                        </div>
+                    </li>
+
+                    <li class="form-line" data-type="control_number" id="dsf">
                         <label class="form-label form-label-left form-label-auto" id="label_24" for="input_24"> Guests </label>
                         <div id="cid_24" class="form-input">
                             <input asp-for="NumberofGuests" class="form-number-input form-textbox validate[Numeric]" style="width:60px" size="5" value="" placeholder="ex: 23" data-component="number" />
                             <span asp-validation-for="NumberofGuests" class="text-danger"></span>
                         </div>
                     </li>
+
                     <li id="cid_29" class="form-input-wide" data-type="control_head">
                         <div class="form-header-group ">
                             <div class="header-text httal htvam">
@@ -493,7 +502,7 @@
                         <div id="cid_31" class="form-input-wide">
                             <div id="text_31" class="form-html" data-component="text">
                                 <p>Please Note:</p>
-                                <p>Your booking is not confirmed unti payment is received</p>
+                                <p>Your booking is not confirmed untill payment is received</p>
                             </div>
                         </div>
                     </li>

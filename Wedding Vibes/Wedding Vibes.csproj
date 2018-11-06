@@ -16,6 +16,14 @@
     <Compile Remove="Migrations\20180705172319_reservation.Designer.cs" />
     <Compile Remove="Migrations\20180705173508_hallname.cs" />
     <Compile Remove="Migrations\20180705173508_hallname.Designer.cs" />
+    <Compile Remove="Migrations\20180705174049_reservation.cs" />
+    <Compile Remove="Migrations\20180705174049_reservation.Designer.cs" />
+    <Compile Remove="Migrations\20181105192248_menuitem.cs" />
+    <Compile Remove="Migrations\20181105192248_menuitem.Designer.cs" />
+    <Compile Remove="Migrations\20181105194516_menucat.cs" />
+    <Compile Remove="Migrations\20181105194516_menucat.Designer.cs" />
+    <Compile Remove="Migrations\20181106145724_menuidinreservation1.cs" />
+    <Compile Remove="Migrations\20181106145724_menuidinreservation1.Designer.cs" />
   </ItemGroup>
 
 

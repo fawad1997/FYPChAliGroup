@@ -41,5 +41,7 @@ namespace Wedding_Vibes.Models.Reservation
         [Required]
         public string Title { get; set; }
         public Boolean Status { get; set; }
+        public int MenuId { get; set; }
+
     }
 }

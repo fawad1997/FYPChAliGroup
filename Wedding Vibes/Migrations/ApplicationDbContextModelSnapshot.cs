@@ -235,6 +235,8 @@ namespace WeddingVibes.Migrations
                     b.Property<string>("LastName")
                         .HasMaxLength(100);
 
+                    b.Property<int>("MenuId");
+
                     b.Property<int>("NumberofGuests");
 
                     b.Property<int>("PhoneNo");
