@@ -1,0 +1,51 @@
+﻿@model List<Wedding_Vibes.Models.MenuVM.MenuVM>
+
+@{
+    ViewData["Title"] = "Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h1><center>Menus</center></h1>
+    <div class="row">
+        @foreach (var m in Model)
+        {
+            <div class="col-xs-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">@m.Name</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            @{ string men = null; }
+                            @foreach (var mitem in m.Items)
+                            {
+                                @if (men == null)
+                                {
+                                    men = mitem.Category;
+                                    <li><strong>@mitem.Category</strong></li>
+                                }
+                                @if (men == mitem.Category)
+                                {
+                                    //continue;
+                                }
+                                else
+                                {
+                                    <li><strong>@mitem.Category</strong></li>
+                                    men = mitem.Category;
+                                }
+                                <ul>
+                                    <li>@mitem.ItemName</li>
+                                </ul>
+                            }
+                        </ul>
+                    </div>
+                    <div class="panel-footer">Rs. <strong>@m.Price+Tax / Person</strong></div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<footer>
+    <p><center>&copy; 2018 - Wedding Vibes</center></p>
+    <br />
+</footer>

@@ -1,0 +1,87 @@
+﻿@model Wedding_Vibes.Models.Reservation.Reservation
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Reservation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HallName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HallName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberofGuests)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NumberofGuests)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ReservationDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ReservationDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.user)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.user.Id)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
+
+<footer class="footer">
+    <p><center>&copy; 2018 - Wedding Vibes</center></p>
+    <br />
+</footer>

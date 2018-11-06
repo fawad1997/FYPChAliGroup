@@ -1,0 +1,592 @@
+﻿@model Wedding_Vibes.Models.Reservation.Reservation
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<h4 style="color:white;"><center>Reservation</center></h4>
+<hr />
+@*<div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label"></label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label"></label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="HallName" class="control-label"></label>
+                    <input asp-for="HallName" class="form-control" />
+                    <span asp-validation-for="HallName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PhoneNo" class="control-label"></label>
+                    <input asp-for="PhoneNo" class="form-control" />
+                    <span asp-validation-for="PhoneNo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NumberofGuests" class="control-label"></label>
+                    <input asp-for="NumberofGuests" class="form-control" />
+                    <span asp-validation-for="NumberofGuests" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ReservationDate" class="control-label"></label>
+                    <input asp-for="ReservationDate" class="form-control" />
+                    <span asp-validation-for="ReservationDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html class="supernova">
+<head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="alternate" type="application/json+oembed" href="https://www.jotform.com/oembed/?format=json&amp;url=http%3A%2F%2Fwww.jotform.com%2Fform%2F81840627858468" title="oEmbed Form">
+    <link rel="alternate" type="text/xml+oembed" href="https://www.jotform.com/oembed/?format=xml&amp;url=http%3A%2F%2Fwww.jotform.com%2Fform%2F81840627858468" title="oEmbed Form">
+    <meta property="og:title" content="Form">
+    <meta property="og:url" content="https://form.jotform.me/81840627858468">
+    <meta property="og:description" content="Please click the link to complete this form.">
+    <link rel="shortcut icon" href="https://cdn.jotfor.ms/favicon.ico">
+    <link rel="canonical" href="https://form.jotform.me/81840627858468" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="HandheldFriendly" content="true" />
+    <title>Form</title>
+    <link href="https://cdn.jotfor.ms/static/formCss.css?3.3.6704" rel="stylesheet" type="text/css" />
+    <link type="text/css" media="print" rel="stylesheet" href="https://cdn.jotfor.ms/css/printForm.css?3.3.6704" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/nova.css?3.3.6704" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/themes/CSS/551913e0977cdf067e8b4567.css?themeRevisionID=57debcc69a11c71ebe8b4567" />
+    <style type="text/css">
+        .form-label-left {
+            width: 150px;
+        }
+
+        .form-line {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .form-label-right {
+            width: 150px;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            background: rgba(4, 19, 13, 0.79);
+        }
+
+        .form-all {
+            margin: 0px auto;
+            padding-top: 0px;
+            width: 550px;
+            color: rgb(255, 255, 255) !important;
+            font-family: 'Libre Baskerville';
+            font-size: 16px;
+        }
+    </style>
+
+    <style type="text/css" id="form-designer-style">
+        /* Injected CSS Code */
+        /*PREFERENCES STYLE*/
+        .form-all {
+            font-family: Libre Baskerville, sans-serif;
+        }
+
+            .form-all .qq-upload-button,
+            .form-all .form-submit-button,
+            .form-all .form-submit-reset,
+            .form-all .form-submit-print {
+                font-family: Libre Baskerville, sans-serif;
+            }
+
+            .form-all .form-pagebreak-back-container,
+            .form-all .form-pagebreak-next-container {
+                font-family: Libre Baskerville, sans-serif;
+            }
+
+        .form-header-group {
+            font-family: Libre Baskerville, sans-serif;
+        }
+
+        .form-label {
+            font-family: Libre Baskerville, sans-serif;
+        }
+
+            .form-label.form-label-auto {
+                display: inline-block;
+                float: left;
+                text-align: left;
+            }
+
+        .form-line {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .form-all {
+            width: 550px;
+        }
+
+        .form-label-left,
+        .form-label-right,
+        .form-label-left.form-label-auto,
+        .form-label-right.form-label-auto {
+            width: 150px;
+        }
+
+        .form-all {
+            font-size: 16px
+        }
+
+            .form-all .qq-upload-button,
+            .form-all .qq-upload-button,
+            .form-all .form-submit-button,
+            .form-all .form-submit-reset,
+            .form-all .form-submit-print {
+                font-size: 16px
+            }
+
+            .form-all .form-pagebreak-back-container,
+            .form-all .form-pagebreak-next-container {
+                font-size: 16px
+            }
+
+        .supernova .form-all, .form-all {
+            background-color: rgba(4, 19, 13, 0.79);
+            border: 1px solid transparent;
+        }
+
+        .form-all {
+            color: rgb(255, 255, 255);
+        }
+
+        .form-header-group .form-header {
+            color: rgb(255, 255, 255);
+        }
+
+        .form-header-group .form-subHeader {
+            color: rgb(255, 255, 255);
+        }
+
+        .form-label-top,
+        .form-label-left,
+        .form-label-right,
+        .form-html,
+        .form-checkbox-item label,
+        .form-radio-item label {
+            color: rgb(255, 255, 255);
+        }
+
+        .form-sub-label {
+            color: 1a1a1a;
+        }
+
+        .supernova {
+            background-color: rgb(195, 195, 195);
+        }
+
+            .supernova body {
+                background: transparent;
+            }
+
+        .form-textbox,
+        .form-textarea,
+        .form-radio-other-input,
+        .form-checkbox-other-input,
+        .form-captcha input,
+        .form-spinner input {
+            background-color: rgba(255, 255, 255, 0.31);
+        }
+
+        .supernova {
+            height: 100%;
+            background-repeat: repeat;
+            background-attachment: scroll;
+            background-position: center top;
+        }
+
+        .supernova {
+            background-image: url("https://www.jotform.com/uploads/EltonCris/form_files/autumn-forest.jpg");
+        }
+
+        #stage {
+            background-image: url("https://www.jotform.com/uploads/EltonCris/form_files/autumn-forest.jpg");
+        }
+
+        .form-all {
+            background-image: none;
+        }
+
+        .ie-8 .form-all:before {
+            display: none;
+        }
+
+        .ie-8 {
+            margin-top: auto;
+            margin-top: initial;
+        }
+
+        /*PREFERENCES STYLE*/ /*__INSPECT_SEPERATOR__*/
+        /* Injected CSS Code */
+    </style>
+
+    @*<script src="https://cdn.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>*@
+    <script src="https://cdn.jotfor.ms/static/jotform.forms.js?3.3.6704" type="text/javascript"></script>
+    <script type="text/javascript">
+        JotForm.init(function () {
+            setTimeout(function () {
+                $('input_7').hint('ex: myname@example.com');
+            }, 20);
+            setTimeout(function () {
+                $('input_8').hint('ex: 23');
+            }, 20);
+            setTimeout(function () {
+                $('input_15').hint('ex: myname@example.com');
+            }, 20);
+            setTimeout(function () {
+                $('input_16').hint('ex: 23');
+            }, 20);
+
+            JotForm.calendarMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            JotForm.calendarDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+            JotForm.calendarOther = { "today": "Today" };
+            var languageOptions = document.querySelectorAll('#langList li');
+            for (var langIndex = 0; langIndex < languageOptions.length; langIndex++) {
+                languageOptions[langIndex].on('click', function (e) { setTimeout(function () { JotForm.setCalendar("20", false, { "days": { "monday": true, "tuesday": true, "wednesday": true, "thursday": true, "friday": true, "saturday": true, "sunday": true }, "future": true, "past": true, "custom": false, "ranges": false, "start": "", "end": "" }); }, 0); });
+            }
+            JotForm.setCalendar("20", false, { "days": { "monday": true, "tuesday": true, "wednesday": true, "thursday": true, "friday": true, "saturday": true, "sunday": true }, "future": true, "past": true, "custom": false, "ranges": false, "start": "", "end": "" });
+            JotForm.formatDate({ date: (new Date()), dateField: $("id_" + 20) });
+            JotForm.displayLocalTime("hour_20", "min_20", "ampm_20");
+            setTimeout(function () {
+                $('input_24').hint('ex: 23');
+            }, 20);
+            setTimeout(function () {
+                $('input_25').hint('ex: 23');
+            }, 20);
+            setTimeout(function () {
+                $('input_26').hint('ex: 23');
+            }, 20);
+            /*INIT-END*/
+        });
+
+        JotForm.prepareCalculationsOnTheFly([null, { "name": "clickTo", "qid": "1", "text": "Personal Information", "type": "control_head" }, { "name": "submitForm", "qid": "2", "text": "Submit Form", "type": "control_button" }, { "name": "bridesName", "qid": "3", "text": "Personal Name", "type": "control_fullname" }, { "name": "address4", "qid": "4", "text": "Address", "type": "control_address" }, null, { "name": "cellNumber", "qid": "6", "text": "Cell Number", "type": "control_phone" }, { "name": "email7", "qid": "7", "text": "E-mail", "type": "control_email" }, { "name": "age", "qid": "8", "text": "Age", "type": "control_number" }, { "name": "occupation", "qid": "9", "text": "Occupation", "type": "control_textbox" }, null, { "name": "clickTo11", "qid": "11", "text": "Groom's Information", "type": "control_head" }, { "name": "groomsName", "qid": "12", "text": "Groom's Name", "type": "control_fullname" }, { "name": "address13", "qid": "13", "text": "Address", "type": "control_address" }, { "name": "cellNumber14", "qid": "14", "text": "Cell Number", "type": "control_phone" }, { "name": "email15", "qid": "15", "text": "E-mail", "type": "control_email" }, { "name": "age16", "qid": "16", "text": "Age", "type": "control_number" }, { "name": "occupation17", "qid": "17", "text": "Occupation", "type": "control_textbox" }, null, { "name": "clickTo19", "qid": "19", "text": "Ceremony Details", "type": "control_head" }, { "name": "date", "qid": "20", "text": "Date & Time", "type": "control_datetime" }, { "name": "city", "qid": "21", "text": "City", "type": "control_textbox" }, { "name": "venueName", "qid": "22", "text": "Venue Name", "type": "control_textbox" }, { "name": "venueCity", "qid": "23", "text": "Venue City", "type": "control_textbox" }, { "name": "guests", "qid": "24", "text": "Guests", "type": "control_number" }, { "name": "bridesmaids", "qid": "25", "text": "Bridesmaids", "type": "control_number" }, { "name": "groomsmen", "qid": "26", "text": "Groomsmen", "type": "control_number" }, { "name": "faithBackground", "qid": "27", "text": "Faith Background", "type": "control_dropdown" }, { "name": "faithBackground28", "qid": "28", "text": "Faith Background", "type": "control_dropdown" }, { "name": "clickTo29", "qid": "29", "text": "Payment Details", "type": "control_head" }, { "name": "paymentMethod", "qid": "30", "text": "Payment Method", "type": "control_dropdown" }, { "name": "clickTo31", "qid": "31", "text": "Please Note:\nE-Mail money transfers are to be sent to bookings@kettlecreekweddings.com\nPayPal account is bookings@celebratinglife.ca\nYour booking is not confirmed unti payment is received", "type": "control_text" }]);
+        setTimeout(function () {
+            JotForm.paymentExtrasOnTheFly([null, { "name": "clickTo", "qid": "1", "text": "Personal Information", "type": "control_head" }, { "name": "submitForm", "qid": "2", "text": "Submit Form", "type": "control_button" }, { "name": "bridesName", "qid": "3", "text": " Name", "type": "control_fullname" }, { "name": "address4", "qid": "4", "text": "Address", "type": "control_address" }, null, { "name": "cellNumber", "qid": "6", "text": "Cell Number", "type": "control_phone" }, { "name": "email7", "qid": "7", "text": "E-mail", "type": "control_email" }, { "name": "age", "qid": "8", "text": "Age", "type": "control_number" }, { "name": "occupation", "qid": "9", "text": "Occupation", "type": "control_textbox" }, null, { "name": "clickTo11", "qid": "11", "text": "Groom's Information", "type": "control_head" }, { "name": "groomsName", "qid": "12", "text": "Groom's Name", "type": "control_fullname" }, { "name": "address13", "qid": "13", "text": "Address", "type": "control_address" }, { "name": "cellNumber14", "qid": "14", "text": "Cell Number", "type": "control_phone" }, { "name": "email15", "qid": "15", "text": "E-mail", "type": "control_email" }, { "name": "age16", "qid": "16", "text": "Age", "type": "control_number" }, { "name": "occupation17", "qid": "17", "text": "Occupation", "type": "control_textbox" }, null, { "name": "clickTo19", "qid": "19", "text": "Ceremony Details", "type": "control_head" }, { "name": "date", "qid": "20", "text": "Date & Time", "type": "control_datetime" }, { "name": "city", "qid": "21", "text": "City", "type": "control_textbox" }, { "name": "venueName", "qid": "22", "text": "Venue Name", "type": "control_textbox" }, { "name": "venueCity", "qid": "23", "text": "Venue City", "type": "control_textbox" }, { "name": "guests", "qid": "24", "text": "Guests", "type": "control_number" }, { "name": "bridesmaids", "qid": "25", "text": "Bridesmaids", "type": "control_number" }, { "name": "groomsmen", "qid": "26", "text": "Groomsmen", "type": "control_number" }, { "name": "faithBackground", "qid": "27", "text": "Faith Background", "type": "control_dropdown" }, { "name": "faithBackground28", "qid": "28", "text": "Faith Background", "type": "control_dropdown" }, { "name": "clickTo29", "qid": "29", "text": "Payment Details", "type": "control_head" }, { "name": "paymentMethod", "qid": "30", "text": "Payment Method", "type": "control_dropdown" }, { "name": "clickTo31", "qid": "31", "text": "Please Note:\nE-Mail money transfers are to be sent to bookings@kettlecreekweddings.com\nPayPal account is bookings@celebratinglife.ca\nYour booking is not confirmed unti payment is received", "type": "control_text" }]);
+        }, 20);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form class="jotform-form" asp-action="Create" asp-controller="Reservations" method="post">
+            <div class="form-all">
+                <ul class="form-section page-section">
+                    <li id="cid_1" class="form-input-wide" data-type="control_head">
+                        <div class="form-header-group ">
+                            <div class="header-text httal htvam">
+                                <h2 id="header_1" class="form-header" data-component="header">
+                                    Personal&#x27;s Information
+                                </h2>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="form-line" data-type="control_fullname" id="id_3">
+                        <label class="form-label form-label-left form-label-auto" id="label_3" for="first_3">  Name </label>
+                        <div id="cid_3" class="form-input">
+                            <div data-wrapper-react="true">
+                                <span class="form-sub-label-container" style="vertical-align:top">
+                                    <input asp-for="FirstName" class="form-textbox" size="10" value="" />
+                                    <label class="form-sub-label" for="first_3" id="sublabel_first" style="min-height:13px"> First Name </label>
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                </span>
+                                <span class="form-sub-label-container" style="vertical-align:top">
+                                    <input asp-for="LastName" class="form-textbox" />
+                                    <label class="form-sub-label" for="last_3" id="sublabel_last" style="min-height:13px"> Last Name </label>
+                                    <span asp-validation-for="LastName" class="text-danger"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="form-line" data-type="control_address" id="id_4">
+                        <label class="form-label form-label-left form-label-auto" id="label_4" for="input_4undefined"> Address </label>
+                        <div id="cid_4" class="form-input">
+                            <table summary="" class="form-address-table" border="0" cellPadding="0" cellSpacing="0">
+                                <tbody>
+                                    <tr>
+                                        <td colSpan="2">
+                                            <span class="form-sub-label-container" style="vertical-align:top">
+                                                <input asp-for="Address" class="form-textbox form-address-line" />
+                                                <label class="form-sub-label" for="input_4_addr_line1" id="sublabel_4_addr_line1" style="min-height:13px"> Street Address </label>
+                                                <span asp-validation-for="Address" class="text-danger"></span>
+                                            </span>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <td>
+                                            <span class="form-sub-label-container" style="vertical-align:top">
+                                                <input type="email" id="input_7" name="q7_email7" class="form-textbox validate[required, Email]" disabled size="30" value="Pakistan" data-component="Country" required="" />
+                                                <label class="form-sub-label" for="input_4_country" id="sublabel_4_country" style="min-height:13px"> Country </label>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                    <li class="form-line" data-type="control_phone" id="id_6">
+                        <label class="form-label form-label-left form-label-auto"> Cell Number </label>
+                        <div id="cid_6" class="form-input">
+                            <div data-wrapper-react="true">
+
+                                <span class="form-sub-label-container" style="vertical-align:top">
+                                    <input asp-for="PhoneNo" class="form-textbox" type="number" />
+                                    @*@foreach(var dat in ViewBag.ReservedDates)
+                                        {
+                                        <h1>@dat.ReservationDate</h1>
+
+                                        }*@
+                                    <label class="form-sub-label" for="input_6_phone" id="sublabel_phone" style="min-height:13px"> Phone Number </label>
+                                    <span asp-validation-for="PhoneNo" class="text-danger"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li id="cid_19" class="form-input-wide" data-type="control_head">
+                        <div class="form-header-group ">
+                            <div class="header-text httal htvam">
+                                <h2 id="header_19" class="form-header" data-component="header">
+                                    Ceremony Details
+                                </h2>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="form-line form-line-column form-col-1 jf-required allowTime" data-type="control_datetime" id="id_20">
+                        <label class="form-label form-label-top" id="label_20" for="month_20">
+                            Date &amp; Time
+                            <span class="form-required">
+                                *
+                            </span>
+                        </label>
+                        <div id="cid_20" class="form-input-wide jf-required">
+                            <div data-wrapper-react="true">
+                                <span class="form-sub-label-container" style="vertical-align:top">
+                                    <input type="date" asp-for="ReservationDate" class="form-textbox" required="" />
+
+                                    <label class="form-sub-label" for="month_20" id="sublabel_month" style="min-height:13px"> Reservation Date </label>
+                                </span>
+                                <span asp-validation-for="ReservationDate" class="text-danger"></span>
+                                <span style="white-space:nowrap;display:inline-block" class="allowTime-container">
+                                    <span class="form-sub-label-container" style="vertical-align:top">
+                                        <div id="at_20">
+                                            at
+                                        </div>
+                                        <label class="form-sub-label" for="at_20" style="min-height:13px">  </label>
+                                    </span>
+                                    <span class="form-sub-label-container" style="vertical-align:top">
+                                        <select class="currentTime time-dropdown form-dropdown validate[required, limitDate]" id="hour_20" name="q20_date[hour]">
+                                            <option selected value="Lunch"> Lunch </option>
+                                            <option value="Dinner"> Dinner </option>
+
+                                        </select>
+
+                                        <label class="form-sub-label" for="hour_20" id="sublabel_hour" style="min-height:13px"> Time </label>
+                                    </span>
+
+                                </span>
+
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="form-line" data-type="control_textbox" id="id_22">
+                        <label class="form-label form-label-left form-label-auto" id="label_22" for="input_22"> Hall Name </label>
+                        <div id="cid_30" class="form-input">
+                            <select class="form-dropdown" asp-for="HallName" onchange="changeSel" style="width:150px" data-component="dropdown">
+                                <option value="">Select Hall  </option>
+                                <option value="Hall 1">
+                                    Hall 1
+                                </option>
+
+                                <option value="Hall 2"> Hall 2 </option>
+                                <option value="Hall 3"> Hall 3 </option>
+                            </select>
+                            @*<input asp-for="HallName" value="Hall" type="hidden" />*@
+                            <label class="form-sub-label" for="min_20" id="sublabel_minutes" style="min-height:13px">Hall 1=capacity  300 </label>
+                            <label class="form-sub-label" for="min_20" id="sublabel_minutes" style="min-height:13px">Hall 2=capacity  800 </label>
+                            <label class="form-sub-label" for="min_20" id="sublabel_minutes" style="min-height:13px">Hall 3=capacity  2000 </label>
+                        </div>
+
+                    </li>
+
+
+                    <li class="form-line" data-type="control_number" id="id_24">
+                        <label class="form-label form-label-left form-label-auto" id="label_24" for="input_24"> Title </label>
+                        <div id="cid_24" class="form-input">
+                            <input asp-for="Title" class="form-textbox" />
+                            <label class="form-sub-label" for="last_3" id="sublabel_last" style="min-height:13px"> Title </label>
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                    </li>
+
+                    <li class="form-line" data-type="control_number" id="id_24">
+                        <label class="form-label form-label-left form-label-auto" id="label_24" for="input_24"> Guests </label>
+                        <div id="cid_24" class="form-input">
+                            <input asp-for="NumberofGuests" class="form-number-input form-textbox validate[Numeric]" style="width:60px" size="5" value="" placeholder="ex: 23" data-component="number" />
+                            <span asp-validation-for="NumberofGuests" class="text-danger"></span>
+                        </div>
+                    </li>
+                    <li id="cid_29" class="form-input-wide" data-type="control_head">
+                        <div class="form-header-group ">
+                            <div class="header-text httal htvam">
+                                <h2 id="header_29" class="form-header" data-component="header">
+                                    Payment Details
+                                </h2>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="form-line" data-type="control_dropdown" id="id_30">
+                        <label class="form-label form-label-left form-label-auto" id="label_30" for="input_30"> Payment Method </label>
+                        <div id="cid_30" class="form-input">
+                            <select class="form-dropdown" id="input_30" name="q30_paymentMethod" style="width:150px" data-component="dropdown">
+                                <option value=""> choose an option </option>
+                                <option value="Cheque"> Cheque </option>
+                                <option value="AccountNo">
+                                    Account Number
+                                </option>
+
+                            </select>
+                            <label class="form-sub-label" for="min_20" id="sublabel_minutes" style="min-height:13px"> Account Number: 000-242-578122</label>
+                        </div>
+                    </li>
+                    <li class="form-line" data-type="control_text" id="id_31">
+                        <div id="cid_31" class="form-input-wide">
+                            <div id="text_31" class="form-html" data-component="text">
+                                <p>Please Note:</p>
+                                <p>Your booking is not confirmed unti payment is received</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="form-line" data-type="control_button" id="id_2">
+                        <div id="cid_2" class="form-input-wide">
+                            <div style="margin-left:156px" class="form-buttons-wrapper">
+                                <button id="input_2" type="submit" class="form-submit-button">
+                                    Submit Form
+                                </button>
+                                <span>
+
+                                </span>
+                                <button id="input_reset_2" type="reset" class="form-submit-reset" data-component="button">
+                                    Clear Form
+                                </button>
+                                <span>
+
+                                </span>
+                                <button id="input_print_2" style="margin-left:25px" type="button" class="form-submit-print" data-component="button">
+                                    <img src="https://cdn.jotfor.ms/images/printer.png" style="vertical-align:middle" />
+                                    <span id="span_print_2" class="span_print">
+                                        Print Form
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li style="display:none">
+                        Should be Empty:
+                        <input type="text" name="website" value="" />
+                    </li>
+                </ul>
+            </div>
+            <script>
+                //function changeSel() {
+                //    var e = document.getElementById("HallName");
+                //    var valuw = e.options[e.selectedIndex].value;
+                //    if(valuw ==)
+
+                //};
+
+                JotForm.showJotFormPowered = "new_footer";
+            </script>
+            <input type="hidden" id="simple_spc" name="simple_spc" value="81840627858468" />
+            <script type="text/javascript">
+                document.getElementById("si" + "mple" + "_spc").value = "81840627858468-81840627858468";
+            </script>
+            <div class="formFooter-heightMask">
+            </div>
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        $(document).ready(function () {
+            var alreadyReservedD = '@Html.Raw(Json.Serialize(ViewBag.ReservedDates))';
+            //console.log(alreadyReservedD);
+            //alert("date");
+            var reservDate = document.getElementById("ReservationDate");
+            reservDate.valueAsDate = new Date();
+
+            
+            var todaysDate = new Date();
+            $('input[type=date]').datepicker({
+                minDate: todaysDate,
+                beforeShowDay: function (date) {
+                    var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
+                    return [alreadyReservedD.indexOf(string) == -1]
+                }
+            });
+            $('#ReservationDate').change(function () {
+                $(this).attr('value', $('#ReservationDate').val());
+            });
+            
+            function convertDate(date) {
+                var yyyy = date.getFullYear().toString();
+                var mm = (date.getMonth() + 1).toString();
+                var dd = date.getDate().toString();
+
+                var mmChars = mm.split('');
+                var ddChars = dd.split('');
+
+                return yyyy + '-' + (mmChars[1] ? mm : "0" + mmChars[0]) + '-' + (ddChars[1] ? dd : "0" + ddChars[0]);
+            }
+
+            reservDate.setAttribute("min", convertDate(todaysDate));
+        });
+    </script>
+</body>
+</html>
+
+<footer>
+    <p><center>&copy; 2018 - Wedding Vibes</center></p>
+    <br />
+</footer>
